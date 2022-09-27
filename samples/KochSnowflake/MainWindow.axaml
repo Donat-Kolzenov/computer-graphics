@@ -5,5 +5,5 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="KochSnowflake.MainWindow"
         Title="KochSnowflake">
-    Welcome to Avalonia!
+        <Rectangle x:Name="RedRectangle" Fill="Red" Height="44" Width="44"/>
 </Window>
