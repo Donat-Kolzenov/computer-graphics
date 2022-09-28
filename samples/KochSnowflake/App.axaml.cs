@@ -1,10 +1,13 @@
-using Avalonia;
-using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Markup.Xaml;
-
 namespace KochSnowflake
 {
-    public partial class App : Application
+    using Avalonia;
+    using Avalonia.Controls.ApplicationLifetimes;
+    using Avalonia.Markup.Xaml;
+
+    using Prism.Ioc;
+    using Prism.DryIoc;
+
+    public partial class App : PrismApplication
     {
         public override void Initialize()
         {
@@ -19,6 +22,15 @@ namespace KochSnowflake
             }
 
             base.OnFrameworkInitializationCompleted();
+        }
+
+        protected override IAvaloniaObject CreateShell()
+        {
+            return Container.Resolve<MainWindow>();
+        }
+
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
         }
     }
 }
