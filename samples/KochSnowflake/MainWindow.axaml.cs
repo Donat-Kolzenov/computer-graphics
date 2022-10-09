@@ -1,29 +1,31 @@
-using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Media;
-
 namespace KochSnowflake
 {
+    using Avalonia;
+    using Avalonia.Controls;
+    using Avalonia.Controls.Shapes;
+    using Avalonia.Markup.Xaml;
+    using Avalonia.Media;
+
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-        }
 
-        public override void Render(DrawingContext context)
-        {
-            Pen penBlack = new Pen(Colors.Black.ToUint32(), 5);
-            
-            Point point1 = new Point(100, 100);
-            Point point2 = new Point(400, 100);
-            Point point3 = new Point(250, 300);
+            var colorBrush = new SolidColorBrush();
+            colorBrush.Color = Colors.Red;
 
-            context.DrawLine(penBlack, point1, point2);
-            context.DrawLine(penBlack, point2, point3);
-            context.DrawLine(penBlack, point3, point1);
-            
-            //CustomCanvas.
+            var circle = new Ellipse()
+            {
+                Fill = colorBrush,
+                Width = 400,
+                Height = 400,
+                Margin = new Thickness(0, 50, 0, 0)
+            };
+
+            var container = new StackPanel();
+            container.Children.Add(circle);
+            this.drawingCanvas.Content = container;
         }
     }
 }
