@@ -2,7 +2,7 @@
 {
     using DesktopSamples.Models.Point;
 
-    public interface IFractalModel
+    public interface IShapeModel
     {
         List<PointModel> Points { get; }
     }
