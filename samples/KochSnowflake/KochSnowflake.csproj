@@ -31,6 +31,7 @@
     <None Remove="ViewModels\" />
     <None Remove="Views\" />
     <None Remove="Prism.DryIoc.Avalonia" />
+    <None Remove="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -38,5 +39,9 @@
     <Folder Include="Helpers\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\" />
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DesktopSamples.Services\DesktopSamples.Services.csproj" />
   </ItemGroup>
 </Project>

@@ -1,7 +1,5 @@
-﻿namespace KochSnowflake.Models
+﻿namespace DesktopSamples.Models.Point
 {
-    using System;
-
     public class PointModel
     {
         public double X { get; set; }
