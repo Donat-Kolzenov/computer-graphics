@@ -1,12 +1,8 @@
 ﻿namespace KochSnowflake.Models
 {
-    using System;
-    using System.Collections.Generic;
+    using DesktopSamples.Models.ShapeBase;
 
-    using KochSnowflake.Models;
-
-    public class KochSnowflakeModel
+    public class KochSnowflakeModel : ShapeBaseModel
     {
-        public List<PointModel> Points { get; set; } = null!;
     }
 }
