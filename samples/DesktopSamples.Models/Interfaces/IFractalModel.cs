@@ -1,8 +1,8 @@
-﻿namespace DesktopSamples.Models.Fractal
+﻿namespace DesktopSamples.Models.Interfaces
 {
     using DesktopSamples.Models.Point;
 
-    public interface IFractal
+    public interface IFractalModel
     {
         List<PointModel> Points { get; }
     }
