@@ -29,19 +29,27 @@ namespace KochSnowflake
         {
             InitializeComponent();
 
-            var point1 = new Point(ClientSize.Width / 3, ClientSize.Height / 3);
-            var point2 = new Point(2 * ClientSize.Width / 3, ClientSize.Height / 3);
-            var point3 = new Point(ClientSize.Width / 2, 2 * ClientSize.Height / 3);
+            //var point1 = new Point(ClientSize.Width / 3, ClientSize.Height / 3);
+            //var point2 = new Point(2 * ClientSize.Width / 3, ClientSize.Height / 3);
+            //var point3 = new Point(ClientSize.Width / 2, 2 * ClientSize.Height / 3);
 
-            _canvas.DrawLine(point1, point2, _penGreen);
-            _canvas.DrawLine(point2, point3, _penGreen);
-            _canvas.DrawLine(point3, point1, _penGreen);
+            //_canvas.DrawLine(point1, point2, _penGreen);
+            //_canvas.DrawLine(point2, point3, _penGreen);
+            //_canvas.DrawLine(point3, point1, _penGreen);
 
-            FractalKoch(point1, point2, point3, 5);
-            FractalKoch(point2, point3, point1, 5);
-            FractalKoch(point3, point1, point2, 5);
+            //FractalKoch(point1, point2, point3, 5);
+            //FractalKoch(point2, point3, point1, 5);
+            //FractalKoch(point3, point1, point2, 5);
 
-            this.Content = _canvas;
+            //this.CustomContentControl.Content = _canvas;
+        }
+
+        private void InitializeComponent()
+        {
+            AvaloniaXamlLoader.Load(this);
+            this.DrawKochSnowflakeButton = this.Find<Button>("DrawKochSnowflakeButton");
+            this.DrawKochSnowflakeButton.Click += DrawKochSnowflakeButton_Click!;
+            this.CustomContentControl = this.Find<ContentControl>("CustomContentControl");
         }
 
         static int FractalKoch(Point p1, Point p2, Point p3, int iter)
@@ -68,6 +76,23 @@ namespace KochSnowflake
                 FractalKoch(p5, p2, new Point((2 * p2.X + p3.X) / 3, (2 * p2.Y + p3.Y) / 3), iter - 1);
             }
             return iter;
+        }
+
+        private void DrawKochSnowflakeButton_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            var point1 = new Point(CustomContentControl.Width / 3, CustomContentControl.Height / 3);
+            var point2 = new Point(2 * CustomContentControl.Width / 3, CustomContentControl.Height / 3);
+            var point3 = new Point(CustomContentControl.Width / 2, 2 * CustomContentControl.Height / 3);
+
+            _canvas.DrawLine(point1, point2, _penGreen);
+            _canvas.DrawLine(point2, point3, _penGreen);
+            _canvas.DrawLine(point3, point1, _penGreen);
+
+            FractalKoch(point1, point2, point3, 5);
+            FractalKoch(point2, point3, point1, 5);
+            FractalKoch(point3, point1, point2, 5);
+
+            this.CustomContentControl.Content = _canvas;
         }
     }
 }
