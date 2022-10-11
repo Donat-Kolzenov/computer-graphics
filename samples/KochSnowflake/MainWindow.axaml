@@ -9,17 +9,13 @@
         Title="{Binding Title}">
     <Grid>
     <Grid.RowDefinitions>
-      <RowDefinition Height="Auto" />
-      <RowDefinition Height="*" />
+      <RowDefinition Height="500" />
+      <RowDefinition Height="55" />
     </Grid.RowDefinitions>
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="Auto" />
-      <ColumnDefinition Width="Auto" />
-      <ColumnDefinition Width="*" />
-    </Grid.ColumnDefinitions>
-    <Button Name="DrawKochSnowflakeButton" Grid.Row="0" Grid.Column="0" Height="25" Width="120" Content="Draw koch snowflake" Margin="5 5 5 5"/>
 
-    <ContentControl Name="CustomContentControl" Grid.Row="1" Background="LightGray" Grid.ColumnSpan="3" Height="500" Width="500"/>
+    <Button Name="DrawKochSnowflakeButton" Grid.Row="1" Height="25" Width="120" Content="Draw koch snowflake" Margin="5 5 5 5"/>
+
+    <ContentControl Name="CustomContentControl" Grid.Row="0" Background="LightGray" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
     
   </Grid>
 </Window>
