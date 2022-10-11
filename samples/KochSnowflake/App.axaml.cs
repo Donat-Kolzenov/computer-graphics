@@ -7,6 +7,8 @@ namespace KochSnowflake
     using Prism.Ioc;
     using Prism.DryIoc;
 
+    using KochSnowflake.ViewModels;
+
     public partial class App : PrismApplication
     {
         public override void Initialize()
@@ -32,6 +34,7 @@ namespace KochSnowflake
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<MainWindow, MainWindowViewModel>();
         }
     }
 }
