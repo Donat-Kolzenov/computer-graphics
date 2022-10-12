@@ -24,5 +24,10 @@
             };
             canvas.Children.Add(line);
         }
+
+        public static void Clear(this Canvas canvas)
+        {
+            canvas.Children.Clear();
+        }
     }
 }
