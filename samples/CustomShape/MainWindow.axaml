@@ -5,6 +5,24 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="CustomShape.MainWindow"
         Title="CustomShape">
-    Welcome to Avalonia!
-</Window>
+  <Grid>
+      <Grid.RowDefinitions>
+          <RowDefinition />
+          <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
 
+      <ContentControl
+          Name="CustomContentControl"
+          Grid.Row="0"
+          Background="White"/>
+
+      <Button
+          Name="DrawCustomShapeButton"
+          Grid.Row="1"
+          Height="30"
+          HorizontalAlignment="Stretch"
+          HorizontalContentAlignment="Center"
+          Content="Draw custom shape"
+          Click="DrawCustomShapeButton_Click"/>
+  </Grid>
+</Window>
