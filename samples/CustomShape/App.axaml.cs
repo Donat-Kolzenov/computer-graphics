@@ -9,6 +9,7 @@ namespace CustomShape
         public override void Initialize()
         {
             AvaloniaXamlLoader.Load(this);
+            base.Initialize();
         }
 
         public override void OnFrameworkInitializationCompleted()
